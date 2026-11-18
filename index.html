@@ -1,0 +1,3889 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Saylani Welfare Clone</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+
+.main-header {
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.top-header {
+    min-height: 65px;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    width: 150px;
+}
+
+.header-info span {
+    font-size: 12px;
+    color: #555;
+    white-space: nowrap;
+}
+
+.language {
+    width: 115px;
+    border-radius: 30px;
+    font-size: 12px;
+}
+
+.sponsor-btn,
+.donate-btn {
+    border-radius: 30px;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 10px 18px;
+}
+
+.sponsor-btn {
+    background: #0755a5;
+}
+
+.donate-btn {
+    background: #59bb43;
+}
+
+.sponsor-btn:hover {
+    background: #06417e;
+    color: white;
+}
+
+.donate-btn:hover {
+    background: #338c29;
+    color: white;
+}
+
+/* NAVBAR */
+
+.navbar {
+    min-height: 45px;
+}
+
+.navbar .nav-link {
+    color: #555;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.navbar .nav-link:hover {
+    color: #59bb43;
+}
+
+/* HERO */
+
+.hero-section {
+    background: linear-gradient(110deg, #f7fbf5, #fff);
+    padding: 40px 0 80px;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: #eaf5e6;
+    color: #50b83f;
+    padding: 10px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 58px;
+    line-height: 1.13;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: #080808;
+}
+
+.hero-title span {
+    display: block;
+    color: #59bb43;
+}
+
+.hero-description {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #666;
+    margin-top: 28px;
+    margin-bottom: 35px;
+}
+
+.hero-donate,
+.hero-learn {
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+}
+
+.hero-donate {
+    background: #59bb43;
+    color: white;
+}
+
+.hero-donate:hover {
+    background: #08713b;
+    color: white;
+}
+
+.hero-learn {
+    border: 1px solid #ddd;
+    color: #59bb43;
+    background: white;
+}
+
+.hero-learn:hover {
+    background: #eaf5e6;
+    color: #338c29;
+}
+
+/* IMAGE */
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 30px;
+    border: 3px solid #e9eee7;
+    box-shadow: 0 15px 30px #00000020;
+}
+
+/* STAT CARD */
+
+.stat-card {
+    position: absolute;
+    bottom: 20px;
+    left: 5%;
+    width: 90%;
+    background: rgba(255,255,255,.95);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px #00000015;
+}
+
+.stat-card h2 {
+    color: #59bb43;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 3px;
+}
+
+.stat-card h6 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.stat-card p {
+    color: #888;
+    font-size: 11px;
+    margin: 0;
+}
+
+.stat-icon {
+    background: #59bb43;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    font-size: 28px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 991px) {
+
+    .top-header {
+        flex-wrap: wrap;
+        padding: 15px 0;
+        gap: 15px;
+    }
+
+    .header-info {
+        flex-wrap: wrap;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .hero-title {
+        font-size: 45px;
+    }
+}
+
+@media(max-width: 576px) {
+
+    .hero-section {
+        padding: 35px 0 55px;
+    }
+
+    .hero-title {
+        font-size: 36px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-image img {
+        height: 280px;
+    }
+
+    .header-info span {
+        font-size: 10px;
+    }
+
+    .stat-card h2 {
+        font-size: 23px;
+    }
+}
+
+/* HEADER SPACING FIX */
+
+.main-header {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Bootstrap container width */
+.main-header .container {
+    width: 100%;
+    max-width: 1320px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* Top header height */
+.top-header {
+    height: 75px;
+    min-height: 75px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Logo */
+.logo {
+    width: 140px;
+    display: block;
+}
+
+/* Header information */
+.header-info {
+    gap: 15px !important;
+    margin: 0;
+}
+
+/* Navigation */
+.navbar {
+    min-height: 45px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+/* Remove extra navigation spacing */
+.navigation {
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .top-header {
+        height: auto;
+        min-height: 75px;
+        flex-wrap: wrap;
+        padding: 12px 0;
+    }
+
+    .main-header .container {
+        max-width: 100%;
+    }
+}
+
+
+
+/* ==================================
+   COMMON SECTION HEADING
+================================== */
+
+.section-heading {
+    margin-bottom: 55px;
+}
+
+.section-tag {
+    display: inline-block;
+    background: #d9f8e8;
+    color: #55b947;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #101010;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 span {
+    color: #59bb43;
+}
+
+.section-heading p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #858585;
+}
+
+
+/* ==================================
+   SECTION 1: LIVE APPEALS
+================================== */
+
+.live-appeals-section {
+    padding: 75px 0 65px;
+    background: #fff;
+}
+
+.appeals-wrapper {
+    position: relative;
+}
+
+.appeals-row {
+    padding: 0 5px;
+}
+
+/* APPEAL CARD */
+
+.appeal-card {
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.appeal-card:hover {
+    transform: translateY(-5px);
+}
+
+/* CARD IMAGE */
+
+.appeal-image {
+    height: 192px;
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.appeal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.appeal-card:hover .appeal-image img {
+    transform: scale(1.05);
+}
+
+/* FLOATING ICON */
+
+.appeal-icon {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+
+    width: 43px;
+    height: 43px;
+
+    background: #fff;
+    color: #58bb43;
+
+    border-radius: 13px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 23px;
+    box-shadow: 0 4px 12px #00000015;
+}
+
+/* CARD CONTENT */
+
+.appeal-content {
+    padding-top: 17px;
+}
+
+.appeal-content h5 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #151515;
+    margin-bottom: 9px;
+}
+
+.appeal-content p {
+    font-size: 11px;
+    line-height: 1.55;
+    color: #777;
+    margin-bottom: 9px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.appeal-content a {
+    color: #59bb43;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.appeal-content a:hover {
+    color: #08713b;
+}
+
+/* SLIDER ARROWS */
+
+.slider-arrow {
+    position: absolute;
+    top: 28%;
+    z-index: 2;
+
+    border: none;
+    background: transparent;
+
+    font-size: 27px;
+    color: #9ca3af;
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: -65px;
+}
+
+.right-arrow {
+    right: -65px;
+}
+
+
+
+/* QUICK DONATE */
+
+.quick-donate-section {
+    padding: 65px 0 75px;
+    background: #fff;
+}
+
+.quick-donate-section .section-heading {
+    margin-bottom: 25px;
+}
+
+.quick-donate-section .section-heading h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #111;
+}
+
+.quick-donate-section .section-heading h2 span {
+    color: #59bb43;
+}
+
+.quick-donate-section .section-heading p {
+    color: #858585;
+    font-size: 14px;
+}
+
+
+/* CATEGORY BUTTONS */
+
+.donate-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.tab-btn {
+    border: none;
+    background: transparent;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: #59bb43;
+    color: #fff;
+    box-shadow: 0 5px 12px #00000015;
+}
+
+
+/* SLIDER */
+
+.donate-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.donate-slide {
+    display: none;
+    animation: donateFade .4s ease;
+}
+
+.donate-slide.active {
+    display: block;
+}
+
+@keyframes donateFade {
+    from {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* DONATION IMAGE */
+
+.donation-banner {
+    height: 295px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 17px;
+    background: #111;
+}
+
+.donation-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,.95),
+        rgba(0,0,0,.05)
+    );
+}
+
+.donation-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.donation-banner:hover img {
+    transform: scale(1.05);
+}
+
+
+/* LABEL */
+
+.banner-label {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 2;
+
+    background: #00a64a;
+    color: #fff;
+
+    padding: 5px 14px;
+    border-radius: 20px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* CONTENT */
+
+.banner-content {
+    position: absolute;
+    z-index: 3;
+
+    left: 23px;
+    right: 23px;
+    bottom: 22px;
+
+    color: white;
+}
+
+.banner-content h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.banner-content p {
+    font-size: 12px;
+    line-height: 1.6;
+    max-width: 65%;
+    margin-bottom: 0;
+}
+
+
+/* DONATE BUTTON */
+
+.banner-donate {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    background: #fff;
+    color: #59bb43;
+
+    padding: 12px 20px;
+    border-radius: 30px;
+
+    font-size: 10px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.banner-donate:hover {
+    background: #59bb43;
+    color: #fff;
+}
+
+
+/* SLIDER ARROWS */
+
+.donate-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.donate-arrows button {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #ddd;
+    background: #fff;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+    color: #59bb43;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.donate-arrows button:hover {
+    background: #59bb43;
+    color: #fff;
+    border-color: #59bb43;
+}
+
+
+/* BOTTOM BUTTON */
+
+.bottom-donate {
+    margin-top: 25px;
+}
+
+.main-donate-btn {
+    display: inline-flex;
+    gap: 15px;
+    align-items: center;
+
+    background: #59bb43;
+    color: white;
+
+    padding: 12px 22px;
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.main-donate-btn:hover {
+    background: #08713b;
+    color: white;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 767px) {
+
+    .quick-donate-section {
+        padding: 45px 0;
+    }
+
+    .donation-banner {
+        height: 260px;
+    }
+
+    .banner-content h3 {
+        font-size: 18px;
+    }
+
+    .banner-content p {
+        font-size: 11px;
+    }
+
+    .donate-tabs {
+        gap: 5px;
+    }
+
+    .tab-btn {
+        padding: 9px 12px;
+    }
+}
+
+
+/* IMPACT SECTION */
+
+.impact-section-new {
+    background: linear-gradient(110deg, #359b20, #48c516);
+    padding: 60px 0;
+    color: white;
+}
+
+.impact-title {
+    margin-bottom: 45px;
+}
+
+.impact-title h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.impact-title p {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+}
+
+/* FOUR CARDS */
+
+.impact-box {
+    height: 190px;
+    border: 1px solid rgba(255,255,255,.85);
+    background: rgba(255,255,255,.12);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px 5px;
+    transition: .3s;
+}
+
+.impact-box:hover {
+    background: rgba(255,255,255,.25);
+    transform: translateY(-5px);
+}
+
+/* ICON */
+
+.impact-icon {
+    width: 52px;
+    height: 52px;
+    background: rgba(255,255,255,.20);
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+/* NUMBER */
+
+.impact-box h3 {
+    font-size: 27px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 7px;
+}
+
+/* TEXT */
+
+.impact-box p {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: white;
+    margin: 0;
+}
+
+/* FOOTER */
+
+.impact-footer {
+    margin-top: 40px;
+}
+
+.impact-footer h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 22px;
+}
+
+.impact-button {
+    display: inline-block;
+    background: white;
+    color: #359b20;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.impact-button:hover {
+    background: #08713b;
+    color: white;
+}
+
+/* MOBILE */
+
+@media(max-width: 576px) {
+
+    .impact-section-new {
+        padding: 45px 0;
+    }
+
+    .impact-title h2 {
+        font-size: 25px;
+    }
+
+    .impact-title p {
+        font-size: 11px;
+    }
+
+    .impact-title {
+        margin-bottom: 30px;
+    }
+
+    .impact-box {
+        height: 165px;
+        border-radius: 14px;
+    }
+
+    .impact-box h3 {
+        font-size: 20px;
+    }
+
+    .impact-box p {
+        font-size: 10px;
+    }
+
+    .impact-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 21px;
+    }
+
+    .impact-footer h4 {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+}
+
+
+/* =====================================
+   WHAT WE ARE DOING SECTION
+===================================== */
+
+.what-we-do-section {
+
+    background: #f8faf8;
+
+    padding: 65px 0 75px;
+
+}
+
+
+/* HEADING */
+
+.what-heading {
+
+    margin-bottom: 30px;
+
+}
+
+.what-tag {
+
+    display: inline-block;
+
+    background: #e7f4e8;
+
+    color: #59bb43;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    padding: 7px 17px;
+
+    border-radius: 30px;
+
+    margin-bottom: 12px;
+
+}
+
+.what-heading h2 {
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    color: #111;
+
+    margin-bottom: 12px;
+
+}
+
+.what-heading h2 span {
+
+    color: #59bb43;
+
+}
+
+.what-heading p {
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #777;
+
+    margin: 0;
+
+}
+
+
+/* FILTER BUTTONS */
+
+.what-filters {
+
+    margin-bottom: 35px;
+
+}
+
+.what-filter-btn {
+
+    border: 1px solid #e5e5e5;
+
+    background: #fff;
+
+    color: #555;
+
+    padding: 11px 27px;
+
+    border-radius: 30px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    margin: 5px;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,.06);
+
+    transition: .3s;
+
+}
+
+.what-filter-btn:hover,
+.what-filter-btn.active {
+
+    background: #59bb43;
+
+    color: #fff;
+
+    border-color: #59bb43;
+
+    box-shadow: 0 5px 12px rgba(89,187,67,.2);
+
+}
+
+
+/* IMAGE CARD */
+
+.what-card {
+
+    height: 220px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 13px;
+
+    background: #eee;
+
+    box-shadow: 0 3px 8px rgba(0,0,0,.10);
+
+    transition: .3s;
+
+}
+
+.what-card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .4s ease;
+
+}
+
+.what-card:hover img {
+
+    transform: scale(1.09);
+
+}
+
+
+/* CARD LABEL */
+
+.what-card-label {
+
+    position: absolute;
+
+    bottom: 17px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #fff;
+
+    color: #48ad43;
+
+    padding: 11px 23px;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,.12);
+
+    transition: .3s;
+
+}
+
+.what-card:hover .what-card-label {
+
+    background: #59bb43;
+
+    color: #fff;
+
+}
+
+
+/* HIDE FILTERED ITEMS */
+
+.what-item {
+
+    transition: .3s;
+
+}
+
+
+/* TABLET */
+
+@media(max-width: 991px) {
+
+    .what-heading h2 {
+
+        font-size: 32px;
+
+    }
+
+    .what-card {
+
+        height: 200px;
+
+    }
+
+}
+
+
+/* MOBILE */
+
+@media(max-width: 576px) {
+
+    .what-we-do-section {
+
+        padding: 45px 0 55px;
+
+    }
+
+    .what-heading {
+
+        padding: 0 10px;
+
+    }
+
+    .what-heading h2 {
+
+        font-size: 27px;
+
+    }
+
+    .what-heading p {
+
+        font-size: 11px;
+
+    }
+
+    .what-filters {
+
+        margin-bottom: 25px;
+
+    }
+
+    .what-filter-btn {
+
+        padding: 9px 16px;
+
+        font-size: 11px;
+
+        margin: 3px;
+
+    }
+
+    .what-card {
+
+        height: 155px;
+
+        border-radius: 10px;
+
+    }
+
+    .what-card-label {
+
+        bottom: 12px;
+
+        padding: 9px 13px;
+
+        font-size: 9px;
+
+    }
+
+}
+
+/* =====================================
+   TESTIMONIALS SECTION
+===================================== */
+
+.testimonial-section {
+    padding: 65px 0 75px;
+    background: #fff;
+}
+
+.testimonial-section .section-heading {
+    margin-bottom: 48px;
+}
+
+.testimonial-section .section-heading h2 {
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.testimonial-wrapper {
+    position: relative;
+}
+
+.testimonial-card {
+    border: 1px solid #dedede;
+    border-radius: 13px;
+    padding: 18px;
+    height: 100%;
+    position: relative;
+    box-shadow: 0 2px 3px rgba(0,0,0,.03);
+    transition: .3s;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 5px 18px rgba(0,0,0,.07);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.testimonial-header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 13px;
+    object-fit: cover;
+    border: 2px solid #eee;
+    padding: 2px;
+}
+
+.testimonial-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.testimonial-info h5 {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 2px;
+    color: #182033;
+}
+
+.testimonial-info small {
+    display: block;
+    font-size: 9px;
+    font-weight: 500;
+    color: #222;
+}
+
+.testimonial-rating {
+    color: #ffb400;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.testimonial-rating span {
+    color: #657084;
+    font-size: 11px;
+}
+
+.quote-icon {
+    font-size: 35px;
+    color: #e1e4e9;
+    align-self: flex-start;
+}
+
+.testimonial-content {
+    padding-top: 17px;
+}
+
+.testimonial-content p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #586477;
+    margin-bottom: 0;
+}
+
+.testimonial-date {
+    position: absolute;
+    top: 61px;
+    right: 17px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #172033;
+}
+
+.testimonial-arrow {
+    position: absolute;
+    top: 40%;
+    z-index: 2;
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: white;
+    color: #c3cbd5;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.testimonial-arrow.left {
+    left: -40px;
+}
+
+.testimonial-arrow.right {
+    right: -40px;
+}
+
+@media(max-width: 767px) {
+
+    .testimonial-section {
+        padding: 45px 0;
+    }
+
+    .testimonial-section .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .testimonial-card {
+        margin-bottom: 8px;
+    }
+
+    .testimonial-arrow {
+        display: none;
+    }
+
+    .testimonial-date {
+        font-size: 8px;
+    }
+
+}
+
+
+/* =====================================
+   OUR BLOGS SECTION
+===================================== */
+
+.blogs-section {
+    padding: 65px 0 75px;
+    background: #fff;
+}
+
+.blogs-section .section-heading {
+    margin-bottom: 38px;
+}
+
+.blogs-section .section-heading h2 {
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.blog-card {
+    height: 100%;
+    transition: .3s;
+}
+
+.blog-image-wrapper {
+    position: relative;
+    height: 170px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.blog-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+.blog-card:hover .blog-image-wrapper img {
+    transform: scale(1.06);
+}
+
+.blog-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #59bb43;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 4px;
+}
+
+.blog-date {
+    font-size: 11px;
+    color: #697386;
+    margin-bottom: 5px;
+}
+
+.blog-date i {
+    margin-right: 4px;
+}
+
+.blog-card h5 {
+    font-size: 14px;
+    line-height: 1.45;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 7px;
+}
+
+.blog-card p {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #687386;
+    margin-bottom: 0;
+}
+
+.blogs-more {
+    margin-top: 32px;
+}
+
+.blogs-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: #59bb43;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 5px 12px rgba(0,0,0,.12);
+    transition: .3s;
+}
+
+.blogs-more-btn:hover {
+    background: #338c29;
+    color: white;
+    transform: translateY(-3px);
+}
+
+@media(max-width: 767px) {
+
+    .blogs-section {
+        padding: 45px 0;
+    }
+
+    .blogs-section .section-heading h2 {
+        font-size: 28px;
+    }
+
+    .blog-image-wrapper {
+        height: 200px;
+    }
+
+}
+
+
+
+/* =====================================
+   MEDIA UPDATES SECTION
+===================================== */
+
+.media-updates-section {
+
+    padding: 65px 0 75px;
+
+    background: #fff;
+
+}
+
+
+/* HEADING */
+
+.media-updates-section .section-heading {
+
+    margin-bottom: 38px;
+
+}
+
+.media-updates-section .section-heading h2 {
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    color: #111;
+
+}
+
+.media-updates-section .section-heading h2 span {
+
+    color: #59bb43;
+
+}
+
+
+/* CARD */
+
+.media-update-card {
+
+    height: 100%;
+
+    transition: .3s;
+
+}
+
+
+/* IMAGE */
+
+.media-image-wrapper {
+
+    width: 100%;
+
+    height: 170px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    margin-bottom: 12px;
+
+}
+
+.media-image-wrapper img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .4s;
+
+}
+
+.media-update-card:hover .media-image-wrapper img {
+
+    transform: scale(1.06);
+
+}
+
+
+/* VIDEO BADGE */
+
+.media-badge {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 12px;
+
+    background: #59bb43;
+
+    color: #fff;
+
+    padding: 5px 12px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    border-radius: 4px;
+
+}
+
+
+/* DATE */
+
+.media-date {
+
+    font-size: 11px;
+
+    color: #687386;
+
+    margin-bottom: 6px;
+
+}
+
+.media-date i {
+
+    margin-right: 4px;
+
+}
+
+
+/* TITLE */
+
+.media-update-card h5 {
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    line-height: 1.5;
+
+    color: #111;
+
+    margin-bottom: 0;
+
+}
+
+
+/* SEE MORE */
+
+.media-more {
+
+    margin-top: 35px;
+
+}
+
+.media-more-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: #59bb43;
+
+    color: #fff;
+
+    padding: 11px 19px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    box-shadow: 0 5px 12px rgba(0,0,0,.12);
+
+    transition: .3s;
+
+}
+
+.media-more-btn:hover {
+
+    background: #338c29;
+
+    color: white;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 767px) {
+
+    .media-updates-section {
+
+        padding: 45px 0;
+
+    }
+
+    .media-updates-section .section-heading h2 {
+
+        font-size: 28px;
+
+    }
+
+    .media-image-wrapper {
+
+        height: 210px;
+
+    }
+
+}
+
+
+/* =====================================
+   LATEST NEWS SECTION
+===================================== */
+
+.latest-news-section {
+
+    padding: 65px 0 75px;
+
+    background: #fff;
+
+}
+
+
+/* HEADING */
+
+.latest-news-section .section-heading {
+
+    margin-bottom: 38px;
+
+}
+
+.latest-news-section .section-heading h2 {
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    color: #111;
+
+}
+
+.latest-news-section .section-heading h2 span {
+
+    color: #59bb43;
+
+}
+
+
+/* NEWS CARD */
+
+.latest-news-card {
+
+    height: 100%;
+
+    transition: .3s;
+
+}
+
+
+/* IMAGE */
+
+.news-image-wrapper {
+
+    width: 100%;
+
+    height: 170px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    margin-bottom: 12px;
+
+}
+
+.news-image-wrapper img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .4s;
+
+}
+
+.latest-news-card:hover .news-image-wrapper img {
+
+    transform: scale(1.06);
+
+}
+
+
+/* BLUE BADGE */
+
+.news-badge {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 12px;
+
+    background: #0875d1;
+
+    color: #fff;
+
+    padding: 5px 12px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    border-radius: 4px;
+
+}
+
+
+/* DATE */
+
+.news-date {
+
+    font-size: 11px;
+
+    color: #687386;
+
+    margin-bottom: 6px;
+
+}
+
+.news-date i {
+
+    margin-right: 4px;
+
+}
+
+
+/* TITLE */
+
+.latest-news-card h5 {
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    line-height: 1.5;
+
+    color: #111;
+
+    margin-bottom: 0;
+
+}
+
+
+/* SEE MORE */
+
+.news-more {
+
+    margin-top: 35px;
+
+}
+
+.news-more-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: #59bb43;
+
+    color: #fff;
+
+    padding: 11px 19px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    box-shadow: 0 5px 12px rgba(0,0,0,.12);
+
+    transition: .3s;
+
+}
+
+.news-more-btn:hover {
+
+    background: #338c29;
+
+    color: white;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 767px) {
+
+    .latest-news-section {
+
+        padding: 45px 0;
+
+    }
+
+    .latest-news-section .section-heading h2 {
+
+        font-size: 28px;
+
+    }
+
+    .news-image-wrapper {
+
+        height: 210px;
+
+    }
+
+}
+
+/* NEWSLETTER */
+
+.newsletter {
+    background: linear-gradient(110deg, #4bbd23, #3b9e22);
+    padding: 58px 20px 60px;
+    text-align: center;
+    color: white;
+}
+
+.newsletter h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.newsletter p {
+    font-size: 13px;
+    line-height: 19px;
+    max-width: 480px;
+    margin: 0 auto 30px;
+}
+
+.newsletter-form {
+    max-width: 385px;
+    margin: auto;
+}
+
+.email-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid white;
+    padding-bottom: 6px;
+}
+
+.email-box input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 10px 0;
+    font-size: 13px;
+}
+
+.email-box input::placeholder {
+    color: white;
+}
+
+.email-box button {
+    background: white;
+    color: #42a52a;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.email-box button i {
+    margin-left: 12px;
+    font-size: 11px;
+}
+
+
+/* MAIN FOOTER */
+
+.main-footer {
+    background: #172232;
+    color: white;
+    padding: 50px 20px 0;
+}
+
+.footer-container {
+    max-width: 950px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1.1fr 1.4fr;
+    gap: 35px;
+}
+
+.footer-about img {
+    width: 145px;
+    margin-bottom: 22px;
+}
+
+.footer-about p {
+    color: #c2ccda;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 18px;
+}
+
+.footer-container h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.footer-links a {
+    display: block;
+    color: #e0e5ed;
+    font-size: 11px;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #51c32b;
+    padding-left: 4px;
+}
+
+
+/* SOCIAL ICONS */
+
+.social-icons {
+    display: flex;
+    gap: 6px;
+}
+
+.social-icons a {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    color: #172232;
+    border-radius: 4px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #4bbd23;
+    color: white;
+}
+
+
+/* CONTACT */
+
+.footer-contact p {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #e0e5ed;
+    font-size: 11px;
+    line-height: 17px;
+    margin-bottom: 12px;
+}
+
+.footer-contact i {
+    font-size: 14px;
+    min-width: 15px;
+}
+
+
+/* BOTTOM FOOTER */
+
+.footer-bottom {
+    max-width: 950px;
+    margin: 55px auto 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    font-size: 10px;
+}
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .newsletter {
+        padding: 45px 15px;
+    }
+
+    .newsletter h2 {
+        font-size: 23px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .footer-about img {
+        width: 135px;
+    }
+
+    .footer-bottom {
+        margin-top: 35px;
+    }
+
+    .footer-bottom a {
+        margin: 0 7px;
+    }
+}
+
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="main-header">
+
+    <div class="container">
+
+        <div class="top-header d-flex justify-content-between align-items-center">
+
+            <img src="images/images.png" class="logo" alt="Saylani">
+
+            <div class="header-info d-flex align-items-center gap-3">
+
+                <span>✉ info@saylaniwelfare.com</span>
+                <span>◉ 0311 1729526</span>
+                <span>☎ +92 21 111 729 526</span>
+
+                <select class="form-select language">
+                    <option>ENGLISH</option>
+                    <option>URDU</option>
+                </select>
+
+                <span>🛒</span>
+
+                <a href="#" class="btn sponsor-btn">Be a Sponsor</a>
+
+                <a href="#" class="btn donate-btn">Donate Now ♥</a>
+
+            </div>
+
+        </div>
+
+        <!-- NAVBAR -->
+
+        <nav class="navbar navbar-expand-lg justify-content-center">
+
+            <div class="navbar-nav gap-lg-4">
+
+                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#">Media</a>
+                <a class="nav-link" href="#">Contact Us</a>
+                <a class="nav-link" href="#">Bank Details</a>
+                <a class="nav-link" href="#">Donor Dashboard</a>
+                <a class="nav-link" href="#">Be a Sponsor</a>
+
+            </div>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="col-lg-6">
+
+                <span class="hero-tag">
+                    ✨ Pakistan's Largest Welfare NGO
+                </span>
+
+                <h1 class="hero-title mt-4">
+
+                    Welcome to
+
+                    <span>Saylani Welfare</span>
+
+                    International Trust
+
+                </h1>
+
+                <p class="hero-description">
+
+                    We are proud to be one of the best NGOs in Pakistan
+                    and among the top 10 NGOs in Pakistan, offering free
+                    daily meals to underprivileged families across 138+
+                    areas. Working closely with local communities, we are
+                    committed to supporting those in need and making a
+                    positive difference every single day.
+
+                </p>
+
+                <div class="d-flex gap-3">
+
+                    <a href="#" class="btn hero-donate">
+                        DONATE NOW
+                    </a>
+
+                    <a href="#" class="btn hero-learn">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT IMAGE -->
+
+            <div class="col-lg-6">
+
+                <div class="hero-image">
+
+                    <img src="images/image-2.jpg"
+                         class="img-fluid"
+                         alt="Children">
+
+                    <div class="stat-card d-flex justify-content-between align-items-center">
+
+                        <div>
+                            <h2>450,000+</h2>
+                            <h6>People Served Daily</h6>
+                            <p>Across 138+ areas in Pakistan</p>
+                        </div>
+
+                        <div class="stat-icon">
+                            ↗
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     SECTION 1: LIVE APPEALS
+================================== -->
+
+<section class="live-appeals-section">
+
+    <div class="container">
+
+        <!-- SECTION HEADING -->
+        <div class="section-heading text-center">
+
+            <span class="section-tag">OUR INITIATIVES</span>
+
+            <h2>Live <span>Appeals</span></h2>
+
+            <p>
+                Making a difference in the lives of thousands every day through
+                <br class="d-none d-md-block">
+                comprehensive welfare programs
+            </p>
+
+        </div>
+
+
+        <!-- APPEALS SLIDER -->
+        <div class="appeals-wrapper">
+
+            <button class="slider-arrow left-arrow" aria-label="Previous">
+                &#10094;
+            </button>
+
+            <div class="row g-3 appeals-row">
+
+                <!-- CARD 1 -->
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="appeal-card">
+
+                        <div class="appeal-image">
+                            <img src="images/walfar-image.jpg" alt="Welfare">
+
+                            <div class="appeal-icon">
+                                ♧
+                            </div>
+                        </div>
+
+                        <div class="appeal-content">
+
+                            <h5>Welfare</h5>
+
+                            <p>
+                                Support welfare initiatives that provide relief
+                                and assistance to individuals and families
+                                facing hardship. Your donation helps meet
+                                essential needs.
+                            </p>
+
+                            <a href="#">Donate Now →</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="appeal-card">
+
+                        <div class="appeal-image">
+                            <img src="images/fitra fayad.png" alt="Fitra">
+
+                            <div class="appeal-icon">
+                                ⌂
+                            </div>
+                        </div>
+
+                        <div class="appeal-content">
+
+                            <h5>Fitra, Fidya and Kaffara</h5>
+
+                            <p>
+                                Fulfill your religious obligations through
+                                Fitra, Fidya, and Kaffara. Your contribution
+                                helps provide food and essential support.
+                            </p>
+
+                            <a href="#">Donate Now →</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="appeal-card">
+
+                        <div class="appeal-image">
+                            <img src="images/sadqa.jpg" alt="Sadaqa Animal">
+
+                            <div class="appeal-icon">
+                                ♧
+                            </div>
+                        </div>
+
+                        <div class="appeal-content">
+
+                            <h5>Sadaqa / Aqiqah Animal</h5>
+
+                            <p>
+                                Fulfill your Sadaqa or Aqiqah through the
+                                sacrifice of animals in accordance with
+                                Islamic principles.
+                            </p>
+
+                            <a href="#">Donate Now →</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 4 -->
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="appeal-card">
+
+                        <div class="appeal-image">
+                            <img src="images/medical.jpg" alt="Medical">
+
+                            <div class="appeal-icon">
+                                ✚
+                            </div>
+                        </div>
+
+                        <div class="appeal-content">
+
+                            <h5>Medical</h5>
+
+                            <p>
+                                Support medical causes that provide essential
+                                healthcare, treatment, and life-saving support
+                                to those in need.
+                            </p>
+
+                            <a href="#">Donate Now →</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="slider-arrow right-arrow" aria-label="Next">
+                &#10095;
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="quick-donate-section">
+
+    <div class="container">
+
+        <!-- HEADING -->
+        <div class="section-heading text-center">
+
+            <h2>Quick <span>Donate</span></h2>
+
+            <p>Choose your cause and make an impact today</p>
+
+        </div>
+
+
+        <!-- CATEGORY BUTTONS -->
+        <div class="donate-tabs">
+
+            <button class="tab-btn active" data-filter="all">
+                General
+            </button>
+
+            <button class="tab-btn" data-filter="food">
+                Daily Food
+            </button>
+
+            <button class="tab-btn" data-filter="medical">
+                Medical
+            </button>
+
+            <button class="tab-btn" data-filter="welfare">
+                Welfare
+            </button>
+
+            <button class="tab-btn" data-filter="education">
+                Education
+            </button>
+
+        </div>
+
+
+        <!-- IMAGE SLIDER -->
+        <div class="donate-slider">
+
+            <!-- SLIDE 1 -->
+            <div class="donate-slide active">
+
+                <div class="row g-3">
+
+                    <!-- IMAGE 1 -->
+                    <div class="col-lg-6 donation-item"
+                         data-category="welfare">
+
+                        <div class="donation-banner">
+
+                            <img src="images/sadqa.jpg"
+                                 alt="Sadaqa Animal">
+
+                            <span class="banner-label">SADAQA</span>
+
+                            <div class="banner-content">
+
+                                <h3>Sadaqa / Aqiqah Animal</h3>
+
+                                <p>
+                                    Fulfill your Sadaqa or Aqiqah through
+                                    the sacrifice of animals according
+                                    to Islamic principles.
+                                </p>
+
+                                <a href="#" class="banner-donate">
+                                    DONATE NOW
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- IMAGE 2 -->
+                    <div class="col-lg-6 donation-item"
+                         data-category="food">
+
+                        <div class="donation-banner">
+
+                            <img src="images/fitra fayad.png"
+                                 alt="Fitra Fidya Kaffara">
+
+                            <span class="banner-label">RAMZAN</span>
+
+                            <div class="banner-content">
+
+                                <h3>Fitra, Fidya & Kaffara</h3>
+
+                                <p>
+                                    Fulfill your religious obligations
+                                    and help provide food and support
+                                    to deserving families.
+                                </p>
+
+                                <a href="#" class="banner-donate">
+                                    DONATE NOW
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SLIDE 2 -->
+            <div class="donate-slide">
+
+                <div class="row g-3">
+
+                    <!-- IMAGE 3 -->
+                    <div class="col-lg-6 donation-item"
+                         data-category="medical">
+
+                        <div class="donation-banner">
+
+                            <img src="images/medical.jpg"
+                                 alt="Medical Assistance">
+
+                            <span class="banner-label">MEDICAL</span>
+
+                            <div class="banner-content">
+
+                                <h3>Medical Assistance</h3>
+
+                                <p>
+                                    Support people who need medical
+                                    treatment, healthcare facilities
+                                    and essential medicines.
+                                </p>
+
+                                <a href="#" class="banner-donate">
+                                    DONATE NOW
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- IMAGE 4 -->
+                    <div class="col-lg-6 donation-item"
+                         data-category="education">
+
+                        <div class="donation-banner">
+
+                            <img src="images/smit.webp"
+                                 alt="Education Support">
+
+                            <span class="banner-label">EDUCATION</span>
+
+                            <div class="banner-content">
+
+                                <h3>Education Support</h3>
+
+                                <p>
+                                    Help deserving students access
+                                    quality education and build
+                                    a better future.
+                                </p>
+
+                                <a href="#" class="banner-donate">
+                                    DONATE NOW
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLIDER ARROWS -->
+        <div class="donate-arrows">
+
+            <button id="prevDonate" aria-label="Previous slide">
+                &#8592;
+            </button>
+
+            <button id="nextDonate" aria-label="Next slide">
+                &#8594;
+            </button>
+
+        </div>
+
+
+        <!-- BOTTOM DONATE BUTTON -->
+        <div class="text-center bottom-donate">
+
+            <a href="#" class="main-donate-btn">
+                DONATE NOW <span>›</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OUR IMPACT SECTION -->
+
+<section class="impact-section-new">
+
+    <div class="container">
+
+        <div class="text-center impact-title">
+            <h2>Our Impact In Numbers</h2>
+            <p>Real-time data showing our commitment to serving humanity</p>
+        </div>
+
+        <div class="row g-3">
+
+            <!-- CARD 1 -->
+            <div class="col-6 col-lg-3">
+                <div class="impact-box">
+                    <div class="impact-icon">
+                        <i class="fa-solid fa-stethoscope"></i>
+                    </div>
+                    <h3>1,500,000</h3>
+                    <p>Lives served every year<br>across Pakistan</p>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="col-6 col-lg-3">
+                <div class="impact-box">
+                    <div class="impact-icon">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3>250,000</h3>
+                    <p>People Fed Daily</p>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="col-6 col-lg-3">
+                <div class="impact-box">
+                    <div class="impact-icon">
+                        <i class="fa-solid fa-people-roof"></i>
+                    </div>
+                    <h3>12,000</h3>
+                    <p>Family Adoptions every<br>Month</p>
+                </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="col-6 col-lg-3">
+                <div class="impact-box">
+                    <div class="impact-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3>400,000</h3>
+                    <p>Students taught annually</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="impact-footer text-center">
+            <h4>Join us in serving nearly 450,000 underprivileged people daily</h4>
+            <a href="#" class="impact-button">
+                Be Part of Change <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     SECTION 2: WHAT WE ARE DOING
+===================================== -->
+
+<section class="what-we-do-section">
+
+    <div class="container">
+
+        <!-- HEADING -->
+
+        <div class="what-heading text-center">
+
+            <span class="what-tag">OUR INITIATIVES</span>
+
+            <h2>What We Are <span>Doing</span></h2>
+
+            <p>
+                Our organization has a long tradition of serving humanity and empowering the underprivileged.
+                <br class="d-none d-md-block">
+                We are committed to making a tangible difference in the lives of those in need.
+            </p>
+
+        </div>
+
+
+        <!-- FILTER BUTTONS -->
+
+        <div class="what-filters text-center">
+
+            <button class="what-filter-btn active" data-category="all">
+                All
+            </button>
+
+            <button class="what-filter-btn" data-category="medical">
+                Medical
+            </button>
+
+            <button class="what-filter-btn" data-category="welfare">
+                Welfare
+            </button>
+
+            <button class="what-filter-btn" data-category="education">
+                Education
+            </button>
+
+        </div>
+
+
+        <!-- IMAGE CARDS -->
+
+        <div class="row g-3" id="whatWeDoGrid">
+
+
+            <!-- CARD 1 -->
+            <div class="col-6 col-lg-3 what-item" data-category="welfare">
+
+                <div class="what-card">
+
+                    <img src="images/eating food.jpg" alt="Dastarkhwan">
+
+                    <span class="what-card-label">DASTARKHWAN</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+            <div class="col-6 col-lg-3 what-item" data-category="welfare">
+
+                <div class="what-card">
+
+                    <img src="images/water.jpg" alt="Clean Water">
+
+                    <span class="what-card-label">CLEAN WATER</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+            <div class="col-6 col-lg-3 what-item" data-category="welfare">
+
+                <div class="what-card">
+
+                    <img src="images/sibl.jpg" alt="SBIL">
+
+                    <span class="what-card-label">SBIL</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+            <div class="col-6 col-lg-3 what-item" data-category="welfare">
+
+                <div class="what-card">
+
+                    <img src="images/old age.jpg" alt="Old Age">
+
+                    <span class="what-card-label">OLD AGE</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 5 -->
+            <div class="col-6 col-lg-3 what-item" data-category="welfare">
+
+                <div class="what-card">
+
+                    <img src="images/al-mohisn'.jpg" alt="Orphanage">
+
+                    <span class="what-card-label">ORPHANAGE</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 6 -->
+            <div class="col-6 col-lg-3 what-item" data-category="education">
+
+                <div class="what-card">
+
+                    <img src="images/vacational.jpg" alt="Vocational Training">
+
+                    <span class="what-card-label">VOCATIONAL TRAINING</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 7 -->
+            <div class="col-6 col-lg-3 what-item" data-category="education">
+
+                <div class="what-card">
+
+                    <img src="images/smit.webp" alt="SMIT">
+
+                    <span class="what-card-label">SMIT</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARD 8 -->
+            <div class="col-6 col-lg-3 what-item" data-category="medical">
+
+                <div class="what-card">
+
+                    <img src="images/mother child.jpg" alt="Mother and Child">
+
+                    <span class="what-card-label">MOTHER & CHILD</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TESTIMONIALS SECTION -->
+
+<section class="testimonial-section">
+
+    <div class="container">
+
+        <div class="section-heading text-center">
+
+            <span class="section-tag">OUR TESTIMONIALS</span>
+
+            <h2>What They <span>Say?</span></h2>
+
+            <p>
+                Making a difference in the lives of thousands every day through
+                comprehensive welfare programs
+            </p>
+
+        </div>
+
+        <div class="testimonial-wrapper">
+
+            <button class="testimonial-arrow left">
+                &#8592;
+            </button>
+
+            <div class="row justify-content-center g-3">
+
+                <!-- TESTIMONIAL 1 -->
+
+                <div class="col-lg-5 col-md-6">
+
+                    <div class="testimonial-card">
+
+                        <div class="testimonial-header">
+
+                            <img src="images/person1.jpg" alt="Arshad Wali">
+
+                            <div class="testimonial-info">
+
+                                <h5>Arshad Wali Muhammad</h5>
+
+                                <small>Group Director, Gerry's Group</small>
+
+                                <div class="testimonial-rating">
+                                    ★★★★★ <span>(4.5)</span>
+                                </div>
+
+                            </div>
+
+                            <div class="quote-icon">
+                                <i class="bi bi-quote"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="testimonial-content">
+
+                            <p>
+                                Saylani Welfare Trust is a name that needs no
+                                introduction today. The journey this team
+                                embarked upon was made possible owing to their
+                                zeal, enthusiasm & commitment to the society
+                                and by the grace of Allah (SWT), it has become
+                                a name that we need and not just the one we
+                                want. I wish Saylani's team all the success
+                                and blessing that they deserve for future,
+                                May God bless Saylani and ensure prosperity
+                                and happiness for our people, Ameen!
+                            </p>
+
+                        </div>
+
+                        <div class="testimonial-date">
+                            4 Days Ago
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TESTIMONIAL 2 -->
+
+                <div class="col-lg-5 col-md-6">
+
+                    <div class="testimonial-card">
+
+                        <div class="testimonial-header">
+
+                            <img src="images/person2.jpg" alt="Asif Ismail">
+
+                            <div class="testimonial-info">
+
+                                <h5>Asif Ismail</h5>
+
+                                <small>C.O.O. & Director, Premier Cables Pvt. Ltd</small>
+
+                                <div class="testimonial-rating">
+                                    ★★★★★ <span>(4.5)</span>
+                                </div>
+
+                            </div>
+
+                            <div class="quote-icon">
+                                <i class="bi bi-quote"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="testimonial-content">
+
+                            <p>
+                                When we talk about serving humanity, no second
+                                thought occurs other than Saylani Welfare Trust.
+                                Saylani is doing a tremendous job in terms of
+                                everything they do for a troubled humanity.
+                                From offering food to the hungry to arranging
+                                jobs for jobless people, arranging marriages
+                                and dowry for orphaned girls, offering free
+                                medical facilities, and much more. We sincerely
+                                wish them success in their future endeavors.
+                            </p>
+
+                        </div>
+
+                        <div class="testimonial-date">
+                            4 Days Ago
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="testimonial-arrow right">
+                &#8594;
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     OUR BLOGS SECTION
+===================================== -->
+
+<section class="blogs-section">
+
+    <div class="container">
+
+        <!-- HEADING -->
+
+        <div class="section-heading text-center">
+
+            <span class="section-tag">LATEST BLOGS</span>
+
+            <h2>Our <span>Blogs</span></h2>
+
+            <p>
+                Stay updated with insights, stories, and news from our welfare initiatives
+            </p>
+
+        </div>
+
+
+        <!-- BLOG CARDS -->
+
+        <div class="row g-4">
+
+            <!-- BLOG 1 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="blog-card">
+
+                    <div class="blog-image-wrapper">
+
+                        <img src="images/eating food.jpg" alt="Ramadan Donation">
+
+                        <span class="blog-badge">Blog</span>
+
+                    </div>
+
+                    <div class="blog-date">
+                        <i class="bi bi-clock"></i> 29/10/2026
+                    </div>
+
+                    <h5>
+                        Ramadan 2027: Donate Food and Blankets to Needy...
+                    </h5>
+
+                    <p>
+                        Learn why children in Pakistan miss school and how
+                        an education donation for fees...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BLOG 2 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="blog-card">
+
+                    <div class="blog-image-wrapper">
+
+                        <img src="images/image-2.jpg" alt="Education Donation">
+
+                        <span class="blog-badge">Blog</span>
+
+                    </div>
+
+                    <div class="blog-date">
+                        <i class="bi bi-clock"></i> 24/10/2026
+                    </div>
+
+                    <h5>
+                        Out of School Children: How Your Education Donation...
+                    </h5>
+
+                    <p>
+                        Learn why children in Pakistan miss school and how
+                        an education donation for fees...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BLOG 3 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="blog-card">
+
+                    <div class="blog-image-wrapper">
+
+                        <img src="images/sadqa.jpg" alt="Sadaqah">
+
+                        <span class="blog-badge">Blog</span>
+
+                    </div>
+
+                    <div class="blog-date">
+                        <i class="bi bi-clock"></i> 23/10/2026
+                    </div>
+
+                    <h5>
+                        Sadaqah in Rajab: Start Your Early Ramadan Donation
+                    </h5>
+
+                    <p>
+                        Give sadaqah in Rajab and plan your early Ramadan
+                        donation. Choose the right...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BLOG 4 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="blog-card">
+
+                    <div class="blog-image-wrapper">
+
+                        <img src="images/al-mohisn'.jpg" alt="Quran Academy">
+
+                        <span class="blog-badge">Blog</span>
+
+                    </div>
+
+                    <div class="blog-date">
+                        <i class="bi bi-clock"></i> 14/10/2026
+                    </div>
+
+                    <h5>
+                        Online Quran Academy: How Sadaqah Funds Free Quran...
+                    </h5>
+
+                    <p>
+                        See how your sadaqah for education supports free
+                        online Quran classes for...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SEE MORE BUTTON -->
+
+        <div class="text-center blogs-more">
+
+            <a href="#" class="blogs-more-btn">
+                SEE MORE
+                <i class="bi bi-chevron-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     MEDIA UPDATES SECTION
+===================================== -->
+
+<section class="media-updates-section">
+
+    <div class="container">
+
+        <!-- HEADING -->
+
+        <div class="section-heading text-center">
+
+            <span class="section-tag">LATEST UPDATE</span>
+
+            <h2>Media <span>Updates</span></h2>
+
+            <p>
+                Making a difference in the lives of thousands every day through
+                <br class="d-none d-md-block">
+                comprehensive welfare programs
+            </p>
+
+        </div>
+
+
+        <!-- MEDIA CARDS -->
+
+        <div class="row justify-content-center g-4">
+
+
+            <!-- VIDEO CARD 1 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="media-update-card">
+
+                    <div class="media-image-wrapper">
+
+                        <img src="images/media1.jpg" alt="Maulana Abdul Habib Attari Visit">
+
+                        <span class="media-badge">
+                            Video
+                        </span>
+
+                    </div>
+
+                    <div class="media-date">
+                        <i class="bi bi-clock"></i>
+                        19/1/2026
+                    </div>
+
+                    <h5>
+                        Maulana Abdul Habib Attari Visits Saylani Zaitoon Ashr...
+                    </h5>
+
+                </div>
+
+            </div>
+
+
+            <!-- VIDEO CARD 2 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="media-update-card">
+
+                    <div class="media-image-wrapper">
+
+                        <img src="images/media2.jpg" alt="Saylani Job Fair">
+
+                        <span class="media-badge">
+                            Video
+                        </span>
+
+                    </div>
+
+                    <div class="media-date">
+                        <i class="bi bi-clock"></i>
+                        19/1/2026
+                    </div>
+
+                    <h5>
+                        Saylani Welfare Trust & KAACIB Job Fair
+                    </h5>
+
+                </div>
+
+            </div>
+
+
+            <!-- VIDEO CARD 3 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="media-update-card">
+
+                    <div class="media-image-wrapper">
+
+                        <img src="images/media3.jpg" alt="KPK Flood Relief">
+
+                        <span class="media-badge">
+                            Video
+                        </span>
+
+                    </div>
+
+                    <div class="media-date">
+                        <i class="bi bi-clock"></i>
+                        19/1/2026
+                    </div>
+
+                    <h5>
+                        Khyber Pakhtunkhwa Floods – Saylani Welfare Relief...
+                    </h5>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- SEE MORE BUTTON -->
+
+        <div class="text-center media-more">
+
+            <a href="#" class="media-more-btn">
+                SEE MORE
+                <i class="bi bi-chevron-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     LATEST NEWS SECTION
+===================================== -->
+
+<section class="latest-news-section">
+
+    <div class="container">
+
+        <!-- HEADING -->
+
+        <div class="section-heading text-center">
+
+            <span class="section-tag">LATEST NEWS</span>
+
+            <h2>Latest <span>News</span></h2>
+
+            <p>
+                Stay informed about our latest activities, events, and community impact
+            </p>
+
+        </div>
+
+
+        <!-- NEWS CARDS -->
+
+        <div class="row g-4">
+
+
+            <!-- NEWS CARD 1 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="latest-news-card">
+
+                    <div class="news-image-wrapper">
+
+                        <img src="images/news1.jpg" alt="Flood Victims">
+
+                        <span class="news-badge">
+                            News
+                        </span>
+
+                    </div>
+
+                    <div class="news-date">
+
+                        <i class="bi bi-clock"></i>
+                        20/1/2026
+
+                    </div>
+
+                    <h5>
+                        Maulana Bashir Farooq Qadri reaches among flood victi...
+                    </h5>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEWS CARD 2 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="latest-news-card">
+
+                    <div class="news-image-wrapper">
+
+                        <img src="images/news2.jpg" alt="Saad Afridi Visit">
+
+                        <span class="news-badge">
+                            News
+                        </span>
+
+                    </div>
+
+                    <div class="news-date">
+
+                        <i class="bi bi-clock"></i>
+                        20/1/2026
+
+                    </div>
+
+                    <h5>
+                        A Heartfelt Visit of Saad Afridi CEO of Scents N Stories
+                    </h5>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEWS CARD 3 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="latest-news-card">
+
+                    <div class="news-image-wrapper">
+
+                        <img src="images/news3.jpg" alt="Additional IG Karachi">
+
+                        <span class="news-badge">
+                            News
+                        </span>
+
+                    </div>
+
+                    <div class="news-date">
+
+                        <i class="bi bi-clock"></i>
+                        20/1/2026
+
+                    </div>
+
+                    <h5>
+                        Javed Alam Odho, Additional IG Karachi, at Saylani Head...
+                    </h5>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEWS CARD 4 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="latest-news-card">
+
+                    <div class="news-image-wrapper">
+
+                        <img src="images/news4.jpg" alt="Saylani IT Exam">
+
+                        <span class="news-badge">
+                            News
+                        </span>
+
+                    </div>
+
+                    <div class="news-date">
+
+                        <i class="bi bi-clock"></i>
+                        20/1/2026
+
+                    </div>
+
+                    <h5>
+                        Saylani Mega IT Exam 2025—A Glimpse of the Future!
+                    </h5>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- SEE MORE -->
+
+        <div class="text-center news-more">
+
+            <a href="#" class="news-more-btn">
+
+                SEE MORE
+
+                <i class="bi bi-chevron-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- NEWSLETTER SECTION -->
+<section class="newsletter">
+    <h2>Subscribe Our Newsletter</h2>
+    <p>
+        Our organization has a long tradition of serving humanity
+        and empowering the underprivileged.
+    </p>
+
+    <form class="newsletter-form">
+        <div class="email-box">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="email" placeholder="Type your email">
+            <button type="submit">
+                Subscribe <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+    <div class="footer-container">
+
+        <div class="footer-about">
+            <img src="images/images.png" alt="Saylani Logo">
+
+            <p>
+                Saylani Welfare International Trust is dedicated
+                to uplifting the impoverished through comprehensive
+                support services including food, health, and education.
+            </p>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>Pages</h3>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Media</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Bank Details</a>
+            <a href="#">Donor Login Account</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>Donation Categories</h3>
+            <a href="#">Sadqa e Jariah</a>
+            <a href="#">Sadqa / Aqiqah Animal</a>
+            <a href="#">Food Donation</a>
+            <a href="#">Education</a>
+            <a href="#">Medical & Healthcare</a>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact us</h3>
+
+            <p><i class="fa-solid fa-location-dot"></i>
+                A-25, Bahadurabad Chowrangi Karachi, Pakistan
+            </p>
+
+            <p><i class="fa-regular fa-envelope"></i>
+                info@saylaniwelfare.com
+            </p>
+
+            <p><i class="fa-solid fa-phone"></i>
+                +92 21 111 729 526 (UAN)
+            </p>
+
+            <p><i class="fa-solid fa-phone"></i>
+                +92 21 38729526
+            </p>
+
+            <p><i class="fa-solid fa-mobile-screen"></i>
+                +92 311 1729526
+            </p>
+
+            <p><i class="fa-solid fa-phone"></i>
+                +1 337 337 2370 (USA)
+            </p>
+
+            <p><i class="fa-solid fa-phone"></i>
+                +44 115 970 6256 (UK)
+            </p>
+
+            <p><i class="fa-solid fa-phone"></i>
+                +1 888 572 3485 (CANADA)
+            </p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>
+            Copyright © 2026 Saylani Welfare International Trust.
+            All Rights Reserved.
+        </span>
+
+        <div>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+const filterButtons = document.querySelectorAll(".tab-btn");
+
+const slides = document.querySelectorAll(".donate-slide");
+
+const donationItems = document.querySelectorAll(".donation-item");
+
+const prevBtn = document.querySelector("#prevDonate");
+
+const nextBtn = document.querySelector("#nextDonate");
+
+let currentSlide = 0;
+
+let visibleSlides = [];
+
+
+// SHOW SLIDE
+function showSlide(index) {
+
+    slides.forEach(slide => {
+        slide.classList.remove("active");
+    });
+
+    if (visibleSlides.length === 0) return;
+
+    currentSlide =
+        (index + visibleSlides.length) % visibleSlides.length;
+
+    visibleSlides[currentSlide].classList.add("active");
+}
+
+
+// NEXT SLIDE
+nextBtn.addEventListener("click", () => {
+
+    showSlide(currentSlide + 1);
+
+});
+
+
+// PREVIOUS SLIDE
+prevBtn.addEventListener("click", () => {
+
+    showSlide(currentSlide - 1);
+
+});
+
+
+// CATEGORY FILTER
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const category = button.dataset.filter;
+
+
+        // ACTIVE BUTTON
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+
+        // FILTER IMAGES
+        donationItems.forEach(item => {
+
+            const itemCategory = item.dataset.category;
+
+            if (
+                category === "all" ||
+                category === itemCategory
+            ) {
+
+                item.classList.remove("d-none");
+
+            } else {
+
+                item.classList.add("d-none");
+
+            }
+
+        });
+
+
+        // FIND SLIDES WITH VISIBLE IMAGES
+        visibleSlides = Array.from(slides).filter(slide => {
+
+            return slide.querySelector(
+                ".donation-item:not(.d-none)"
+            );
+
+        });
+
+
+        // RESET SLIDER
+        showSlide(0);
+
+
+        // HIDE ARROWS IF ONLY ONE SLIDE
+        if (visibleSlides.length <= 1) {
+
+            prevBtn.style.display = "none";
+            nextBtn.style.display = "none";
+
+        } else {
+
+            prevBtn.style.display = "block";
+            nextBtn.style.display = "block";
+
+        }
+
+    });
+
+});
+
+
+// INITIALIZE GENERAL
+visibleSlides = Array.from(slides);
+
+showSlide(0);
+
+
+/* =====================================
+   WHAT WE ARE DOING FILTER
+===================================== */
+
+const whatFilterButtons = document.querySelectorAll(
+    ".what-filter-btn"
+);
+
+const whatItems = document.querySelectorAll(
+    ".what-item"
+);
+
+whatFilterButtons.forEach(button => {
+
+    button.addEventListener("click", function() {
+
+        // Active button
+        whatFilterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        this.classList.add("active");
+
+        // Selected category
+        const selectedCategory = this.dataset.category;
+
+        // Filter cards
+        whatItems.forEach(item => {
+
+            const itemCategory = item.dataset.category;
+
+            if (
+                selectedCategory === "all" ||
+                selectedCategory === itemCategory
+            ) {
+
+                item.classList.remove("d-none");
+
+            } else {
+
+                item.classList.add("d-none");
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
